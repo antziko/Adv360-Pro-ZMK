@@ -4,7 +4,27 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
 / {
+    combos {
+        compatible = "zmk,combos";
+        COMBO(caps, &caps_word, 44 63)
+        
+        /* 
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <44 63>;
+            bindings = <&caps_word>;
+        }; 
+        */
+    };
     behaviors {
       #include "macros.dtsi"
 
