@@ -40,11 +40,12 @@
         &mo 2    &kp GRAVE &kp PSCRN &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
+    
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4    &kp F5 &kp F6 &tog 1                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans    &trans &trans  &none                                                       &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans    &trans &trans  &none        &trans &trans             &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &kp F1 &kp F2 &kp F3 &kp F4    &kp F5 &kp F6 &tog 1                                                       &mo 3 &kp F7 &kp F8     &kp F9     &kp F10  &kp F11 &kp F12
+        &trans &trans &trans &trans    &trans &trans  &none                                                       &none &trans &trans     &trans     &trans   &trans  &trans
+        &trans &trans &trans &trans    &trans &trans  &none        &trans &trans             &trans &trans        &none &trans &trans     &trans     &trans   &trans  &trans
         &trans &trans &trans &trans    &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans     &C_PREV    &C_NEXT  &C_PP   &trans
         &trans &trans &trans &C_BRI_DN &C_BRI_UP            &trans &trans &trans             &trans &trans &trans              &C_VOL_UP  &C_VOL_DN  &C_MUTE  &trans  &trans
     };
