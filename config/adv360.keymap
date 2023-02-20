@@ -16,15 +16,16 @@
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(caps, &caps_word, 47 66) /* LSHIFT RSHIFT */
+        COMBO(caps, &caps_word, 47 66) // LSHIFT RSHIFT 
 
-        /* 
+      /* 
         combo_caps {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&caps_word>;
         }; 
-        */
+      */
+      
     };
     behaviors {
       #include "macros.dtsi"
