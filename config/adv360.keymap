@@ -46,7 +46,7 @@
         &trans &trans &trans &trans    &trans &trans  &none                                                       &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans    &trans &trans  &none        &trans &trans             &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans    &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans     &C_PREV    &C_NEXT  &C_PP   &trans
-        &trans &trans &trans &C_BRI_DN &C_BRI_UP            &trans &trans &trans             &trans &trans &trans              &C_VOL_UP  &C_VOL_DN  &C_MUTE  &trans  &
+        &trans &trans &trans &C_BRI_DN &C_BRI_UP            &trans &trans &trans             &trans &trans &trans              &C_VOL_UP  &C_VOL_DN  &C_MUTE  &trans  &trans
     };
     mod {
       bindings = <
