@@ -50,13 +50,13 @@
     compatible = "zmk,behavior-macro";
     label = "macro_undo";
     #binding-cells = <0>;
-    bindings = <&kp LC(Z);
+    bindings = <&kp LC(Z)>;
   };
   mcy: mcy {
     compatible = "zmk,behavior-macro";
     label = "macro_redo";
     #binding-cells = <0>;
-    bindings = <&kp LC(Y);
+    bindings = <&kp LC(Y)>;
   };
 
 
