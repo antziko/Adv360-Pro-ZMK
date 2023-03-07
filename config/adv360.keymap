@@ -25,7 +25,6 @@
             bindings = <&caps_word>;
         }; 
       */
-      
     };
     behaviors {
       #include "macros.dtsi"
