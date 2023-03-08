@@ -85,7 +85,7 @@
         &trans &trans &trans &trans       &trans &trans  &none                                                       &none &trans &trans        &trans        &trans      &trans   &trans
         &trans &trans &trans &trans       &trans &trans  &none        &trans &trans &none &none &trans &trans        &none &trans &trans        &trans        &trans      &trans   &trans
         &trans &trans &trans &trans       &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans        &kp C_PREV    &kp C_NEXT  &kp C_PP &trans
-        &trans &trans &trans &kp C_BRI_DN &kp C_BRI_UP         &trans &trans &trans             &trans &trans &trans              &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans   &trans
+        &trans &trans &CAPS  &kp C_BRI_DN &kp C_BRI_UP         &trans &trans &trans             &trans &trans &trans              &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans   &trans
       >;
     };
     mod {
