@@ -16,7 +16,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(caps, &caps_word, 47 66) // LSHIFT RSHIFT 
+        COMBO(caps, &caps_word, 0 1) // LSHIFT RSHIFT 
 
       /* 
         combo_caps {
