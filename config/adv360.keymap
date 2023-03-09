@@ -13,10 +13,15 @@
     layers = <0>; \
   };
 
+&caps_word {
+    continue-list = <BACKSPACE DELETE UNDERSCORE MINUS COMMA DOT SLASH PIPE BACKSLASH>;
+    mods = <MOD_LSFT | MOD_RALT>;  
+};
+
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(caps, &caps_word, 0 14) // LSHIFT RSHIFT 
+        COMBO(caps, &caps_word, 42 53) // LSHIFT RSHIFT 
 
       /* 
         combo_caps {
