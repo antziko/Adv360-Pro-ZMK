@@ -15,7 +15,6 @@
 
 &caps_word {
     continue-list = <BACKSPACE DELETE UNDERSCORE MINUS COMMA DOT SLASH PIPE BACKSLASH>;
-    mods = <(MOD_RALT)>;  
 };
 
 / {
