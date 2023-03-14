@@ -60,6 +60,15 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      k_cutcopy: cut-copy{
+          compatible = "zmk,behavior-hold-tap";
+          label = "CUT_COPY_TAP_PREFERRED";
+          #binding-cells = <2>;
+          tapping_term_ms = <200>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&mcx>, <&kp>;
+      };
     };
 
   keymap {
