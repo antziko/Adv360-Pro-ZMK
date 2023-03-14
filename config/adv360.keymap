@@ -60,7 +60,7 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
-      htps: hold-sticky-tap-preferred {
+      hts: hold-sticky-tap-preferred {
           compatible = "zmk,behavior-hold-tap";
           label = "HOLDTAP_TAP_PREFERRED";
           #binding-cells = <2>;
