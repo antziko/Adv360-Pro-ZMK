@@ -42,7 +42,7 @@
   };
   mcx: mcx {
     compatible = "zmk,behavior-macro";
-    label = "macro_copy";
+    label = "macro_cut";
     #binding-cells = <0>;
     bindings = <&kp LC(X)>;
   };
