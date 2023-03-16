@@ -33,6 +33,13 @@
     behaviors {
       #include "macros.dtsi"
 
+      td0: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_0";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp N9>, <&kp N2>, <&kp N3>;
+      };
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
@@ -77,13 +84,6 @@
           quick_tap_ms = <0>;
           flavor = "balanced";
           bindings = <&kp>, <&kp>;
-      };
-      td0: tap_dance_copycut {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_COPYCUT";
-          #binding-cells = <0>;
-          tapping-term-ms = <125>;
-          bindings = <&kp N1>, <&kp N2>, <&kp N3>;
       };
     };
 
