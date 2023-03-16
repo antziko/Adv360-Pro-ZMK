@@ -69,34 +69,22 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&sk>;
       };
-      k_redoundo: redo-undo-tap-preferred {
+      htd: hold-tapdance-tap-preferred {
           compatible = "zmk,behavior-hold-tap";
-          label = "REDOUNDO_TAP_PREFERRED";
+          label = "HOLD_TAPDANCE_TAP_PREFERRED";
           #binding-cells = <2>;
           tapping_term_ms = <200>;
           quick_tap_ms = <0>;
           flavor = "tap-preferred";
-          bindings = <&mcy>, <&mcz>;
-      }; 
-      k_cutcopy: cut-copy-tap-preferred {
-          compatible = "zmk,behavior-hold-tap";
-          label = "CUTCOPY_TAP_PREFERRED";
-          #binding-cells = <2>;
-          tapping_term_ms = <200>;
-          quick_tap_ms = <0>;
-          flavor = "tap-preferred";
-          bindings = <&mcx>, <&mcc>;
-      }; 
-      k_savepaste: save-paste-tap-preferred {
-          compatible = "zmk,behavior-hold-tap";
-          label = "SAVEPASTE_TAP_PREFERRED";
-          #binding-cells = <2>;
-          tapping_term_ms = <200>;
-          quick_tap_ms = <0>;
-          flavor = "tap-preferred";
-          bindings = <&mcs>, <&mcv>;
-      }; 
-
+          bindings = <&kp>, <&td0>;
+      };
+      td0: tap_dance_0 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_0";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LC(C)>, <&kp LC(X);
+      };
     };
 
   keymap {
@@ -105,8 +93,8 @@
     default_layer {
       bindings = <
         AS(EQUAL) AS(N1)    AS(N2)          AS(N3)   AS(N4)     AS(N5) &tog 1                                                                                     &mo 3                 AS(N6) AS(N7)    AS(N8)    AS(N9)   AS(N0)   AS(MINUS)
-        &kp TAB   &kp Q     &kp W           &kp E    &kp R      &kp T  &htp LC(S) LC(V)                                                                           &hts LC(A) LC(LSHIFT) &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S           &kp D    &kp F      &kp G  &htp LC(X) LC(C) &kp LCTRL        &htp LALT LGUI             &kp RALT  &kp RCTRL           &htp LC(Y) LC(Z)      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+        &kp TAB   &kp Q     &kp W           &kp E    &kp R      &kp T  &htp LC(S) LC(F)                                                                           &hts LC(A) LC(LSHIFT) &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S           &kp D    &kp F      &kp G  &htd LC(V) 0     &kp LCTRL        &htp LALT LGUI             &kp RALT  &kp RCTRL           &htp LC(Y) LC(Z)      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X           &kp C    &kp V      &kp B          &none    &none            &kp HOME       &none &none &kp PG_UP &none     &none                           &kp N  &kp M     AS(COMMA) AS(DOT)  &kp FSLH &kp RSHFT
         &mo 2     AS(GRAVE) &htp CAPS PSCRN &kp LEFT &kp RIGHT                 &kp BSPC &htp SPACE DEL   &kp END                    &kp PG_DN &kp ENTER &kp SPACE                              &kp DOWN  &kp UP    AS(LBKT) AS(RBKT) &tog 2
       >;
