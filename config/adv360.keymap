@@ -60,7 +60,7 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
-      ht_bspc: hold-tap-preferred {
+      ht_bspc: hold-bspc-tap-preferred {
           compatible = "zmk,behavior-hold-tap";
           label = "HOLDTAP_BSPC_TAP_PREFERRED";
           #binding-cells = <2>;
