@@ -17,7 +17,32 @@
     continue-list = <BACKSPACE DELETE UNDERSCORE MINUS COMMA DOT SLASH PIPE BACKSLASH>;
 };
 
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <150>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+
+&caps_word {
+    continue-list = <BACKSPACE DELETE UNDERSCORE MINUS COMMA DOT SLASH PIPE BACKSLASH>;
+};
+
 / {
+    combos {
+        compatible = "zmk,combos";
+        COMBO(caps, &caps_word, 46 65) // LSHIFT RSHIFT 
+
+      /* 
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&caps_word>;
+        }; 
+      */
+    };
     combos {
         compatible = "zmk,combos";
         COMBO(caps, &caps_word, 46 65) // LSHIFT RSHIFT 
@@ -33,6 +58,7 @@
     behaviors {
       #include "macros.dtsi"
       
+      
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
           label = "HOMEROW_MODS";
@@ -41,6 +67,49 @@
           quick_tap_ms = <175>;
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
+      };
+      as: auto_shift {
+          compatible = "zmk,behavior-hold-tap";
+          label = "AUTO_SHIFT";
+          #binding-cells = <2>;
+          tapping_term_ms = <200>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+      htp: hold-tap-preferred {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOLDTAP_TAP_PREFERRED";
+          #binding-cells = <2>;
+          tapping_term_ms = <200>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+      lhtp: longhold-tap-preferred {
+          compatible = "zmk,behavior-hold-tap";
+          label = "LONGHOLDTAP_TAP_PREFERRED";
+          #binding-cells = <2>;
+          tapping_term_ms = <300>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
+      hts: hold-sticky-tap-preferred {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOLDSTICKY_TAP_PREFERRED";
+          #binding-cells = <2>;
+          tapping_term_ms = <200>;
+          quick_tap_ms = <0>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&sk>;
+      };
+      td_cxv: tap_dance_cxv {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_CXV";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LC(C)>, <&htp LC(V) LC(X)>;
       };
       as: auto_shift {
           compatible = "zmk,behavior-hold-tap";
@@ -97,6 +166,11 @@
         &kp ESC   &kp A     &kp S           &kp D    &kp F      &kp G  &td_cxv                     &kp LCTRL        &lhtp LALT LGUI &none &none &kp RALT  &kp RCTRL           &htp LC(Y) LC(Z)      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X           &kp C    &kp V      &kp B          &none               &none            &kp HOME        &none &none &kp PG_UP &none     &none                           &kp N  &kp M     AS(COMMA) AS(DOT)  &kp FSLH &kp RSHFT
         &mo 2     AS(GRAVE) &htp CAPS PSCRN &kp LEFT &kp RIGHT                 &htp LC(BSPC) BSPC  &htp LC(DEL) DEL &kp END                     &kp PG_DN &kp ENTER &kp SPACE                              &kp DOWN  &kp UP    AS(LBKT) AS(RBKT) &tog 2
+        AS(EQUAL) AS(N1)    AS(N2)          AS(N3)   AS(N4)     AS(N5) &tog 1                                                                                                 &mo 3                 AS(N6) AS(N7)    AS(N8)    AS(N9)   AS(N0)   AS(MINUS)
+        &kp TAB   &kp Q     &kp W           &kp E    &kp R      &kp T  &htp LC(S) LC(F)                                                                                       &hts LC(A) LC(LSHIFT) &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S           &kp D    &kp F      &kp G  &td_cxv                     &kp LCTRL        &lhtp LALT LGUI &none &none &kp RALT  &kp RCTRL           &htp LC(Y) LC(Z)      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X           &kp C    &kp V      &kp B          &none               &none            &kp HOME        &none &none &kp PG_UP &none     &none                           &kp N  &kp M     AS(COMMA) AS(DOT)  &kp FSLH &kp RSHFT
+        &mo 2     AS(GRAVE) &htp CAPS PSCRN &kp LEFT &kp RIGHT                 &htp LC(BSPC) BSPC  &htp LC(DEL) DEL &kp END                     &kp PG_DN &kp ENTER &kp SPACE                              &kp DOWN  &kp UP    AS(LBKT) AS(RBKT) &tog 2
       >;
     };
     keypad {
@@ -107,6 +181,7 @@
         &kp LSHFT &kp Z     &kp X           &kp C    &kp V      &kp B          &none               &none            &kp HOME        &none &none &kp PG_UP &none     &none                            &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
         &mo 2     AS(GRAVE) &htp CAPS PSCRN &kp LEFT &kp RIGHT                 &htp LC(BSPC) BSPC  &htp LC(DEL) DEL &kp END                     &kp PG_DN &kp ENTER &kp KP_N0                               &kp DOWN   &kp UP       &kp KP_DOT    &kp RBKT        &tog 2
       >;
+    }; 
     }; 
     fn {
       bindings = <
