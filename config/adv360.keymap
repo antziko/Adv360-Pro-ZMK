@@ -20,9 +20,9 @@
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(caps, &caps_word, 52 59) 
+        COMBO(caps, &caps_word, 28 45) 
 
-        // 52:BACKSPACE  59:SPACE
+        // 28:ESC  45:quotes
         // 46:LSHIFT  65:RSHIFT 
 
       /* 
